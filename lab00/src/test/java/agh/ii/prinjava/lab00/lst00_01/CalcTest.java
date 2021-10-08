@@ -27,4 +27,14 @@ class CalcTest {
         //then
         assertEquals(3, Calc.add(a,b));
     }
+
+    @Test
+    void onePlusZeroIsOne() {
+
+        //if
+        int a = 1, b = 0;
+
+        //then
+        assertEquals(1, Calc.add(a, b));
+    }
 }

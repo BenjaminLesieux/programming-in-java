@@ -1,0 +1,30 @@
+package agh.ii.prinjava.lab02.lst02_06;
+
+/**
+ * An <i>abstract class</i> is a class that is:
+ * <ul>
+ *     <li>(either) incomplete (as {@link Shape}); typical case, <i>Abstract Data Type</i>)</li>
+ *     <li>(or) to be considered incomplete (as {@link ToBeConsideredAbstract}); unusual, but possible</li>
+ * </ul>
+ *
+ * <p>A class should be declared abstract only if the intent is that subclasses
+ * can be created to complete the implementation
+ * <p>To prevent instantiation of a class it is recommended to declare only one parameterless
+ * constructor that is private
+ *
+ * <p> An <i>abstract method</i> declaration introduces the method (as a member), providing its:
+ * <ul>
+ *     <li>signature</li>
+ *     <li>result type</li>
+ *     <li>throws clause, if any</li>
+ * </ul>
+ * but <i>does not provide an implementation</i>
+ *
+ * <p><i>Note</i>: abstract and final cannot go together (since it makes no sense)
+ */
+abstract class Shape {
+    abstract double area();
+
+    public Shape() {
+    }
+}
