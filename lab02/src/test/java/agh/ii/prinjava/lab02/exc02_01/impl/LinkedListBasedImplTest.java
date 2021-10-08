@@ -54,17 +54,11 @@ class LinkedListBasedImplTest {
     void numOfElems() {
         assertEquals(4, stackOfInts.numOfElems());
         stackOfInts.pop();
-        stackOfInts.peek();
-        assertEquals(2, stackOfInts.numOfElems());
+        assertEquals(3, stackOfInts.numOfElems());
     }
 
     @Test
     void peek() {
         assertEquals(12, stackOfInts.peek());
-        assertEquals(22, stackOfInts.peek());
-        assertNotEquals(123, stackOfInts.peek());
-        assertEquals(111, stackOfInts.peek());
-
-        assertThrows(IllegalStateException.class, stackOfInts::peek);
     }
 }

@@ -54,16 +54,7 @@ public class ArrayBasedImpl implements StackOfInts {
     @Override
     public int peek() {
         if (ints.length > 0) {
-            int[] smallerArray = new int[ints.length-1];
-
-            for (int i = 1; i < ints.length; i++) {
-                smallerArray[i-1] = ints[i];
-            }
-
-            int value = ints[0];
-            ints = smallerArray;
-
-            return value;
+            return ints[0];
         }
         throw new IllegalStateException("There is no head in this Array");
     }

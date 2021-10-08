@@ -65,10 +65,7 @@ public class LinkedListBasedImpl implements StackOfInts {
     public int peek() {
 
         if (this.head != null) {
-            Node temp = head;
-            head = head.next;
-
-            return temp.elem;
+            return this.head.elem;
         } else throw new IllegalStateException("To be implemented");
     }
 
