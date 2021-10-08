@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="agh.ii.prinjava.lab03.exc03_01.impl.LinkedListBasedImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-01T14:31:56" hostname="MacBook-Pro-de-Benjamin.local" time="0.057">
+  <properties/>
+  <testcase name="serialized()" classname="agh.ii.prinjava.lab03.exc03_01.impl.LinkedListBasedImplTest" time="0.057"/>
+  <system-out><![CDATA[Queue with 3 elements and 1 as first and 4 as last
+Queue of ints (unserialized): Queue with 3 elements and 1 as first and 4 as last
+Queue of ints has just been serialized. Now trying to deserialize it...
+Queue of ints (deserialized object): Queue with 3 elements and 1 as first and 4 as last
+
+Demo file deleted
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

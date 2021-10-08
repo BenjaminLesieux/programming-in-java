@@ -1,0 +1,6 @@
+3Queue with 3 elements and 1 as first and 4 as last
+QQueue of ints (unserialized): Queue with 3 elements and 1 as first and 4 as last
+HQueue of ints has just been serialized. Now trying to deserialize it...
+XQueue of ints (deserialized object): Queue with 3 elements and 1 as first and 4 as last
+
+Demo file deleted
