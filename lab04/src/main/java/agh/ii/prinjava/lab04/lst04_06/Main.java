@@ -1,50 +1,5 @@
 package agh.ii.prinjava.lab04.lst04_06;
 
-/**
- * Subtyping is a key feature of object-oriented languages such as Java. In Java, one type is a subtype of another
- * if they are related by an extends or implements clause.
- * Subtyping is transitive, meaning that if one type is a subtype of a second, and the second is a subtype of a third,
- * then the first is a subtype of the third.
- *
- * <p><i>Substitution principle</i>: a variable of a given type may be assigned a value of any subtype of that type,
- * and a method with a parameter of a given type may be invoked with an argument of any subtype of that type.
- */
-class A {
-}
-
-class B extends A {
-}
-
-class C extends B {
-}
-
-/**
- * A generic type (type constructor) is invariant on its type parameter(s).
- * <p>Although B is a subtype of A (as defined above), {@code GenBox<B>} is NOT a subtype of {@code GenBox<A>}
- *
- * @see <a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">Covariance and contravariance</a>
- */
-class GenBox<T> {
-    private T x;
-
-    public GenBox(T x) {
-        this.x = x;
-    }
-
-    public T getX() {
-        return x;
-    }
-
-    public void setX(T x) {
-        this.x = x;
-    }
-
-    @Override
-    public String toString() {
-        return "BoxForT{" + "x=" + x + '}';
-    }
-}
-
 public class Main {
 
     private static <T> void copy_v1(GenBox<T> src, GenBox<T> dst) {

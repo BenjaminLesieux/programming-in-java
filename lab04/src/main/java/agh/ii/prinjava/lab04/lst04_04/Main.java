@@ -1,122 +1,7 @@
 package agh.ii.prinjava.lab04.lst04_04;
 
-/**
- * A series of auxiliary definitions (interfaces and classes)
- */
-interface IA {
-    void mA();
-}
-
-interface IB extends IA {
-    void mB();
-}
-
-interface IC extends IB {
-    void mC();
-}
-
-interface I10 {
-    void m10();
-}
-
-class CA implements IA {
-    @Override
-    public void mA() {
-        System.out.println("A.mA");
-    }
-}
-
-class CB implements IB {
-    @Override
-    public void mA() {
-        System.out.println("B.mA");
-    }
-
-    @Override
-    public void mB() {
-        System.out.println("B.mB");
-    }
-}
-
-class CC implements IC {
-    @Override
-    public void mA() {
-        System.out.println("C.mA");
-    }
-
-    @Override
-    public void mB() {
-        System.out.println("C.mB");
-    }
-
-    @Override
-    public void mC() {
-        System.out.println("C.mC");
-    }
-}
-
-class A10 implements IA, I10 {
-    @Override
-    public void mA() {
-        System.out.println("A10.mA");
-    }
-
-    @Override
-    public void m10() {
-        System.out.println("A10.m10");
-    }
-}
-
-/**
- * <i>Unconstrained parametric polymorphism</i>
- * <p>{@code GenClass0<T>} - the T represents all reference types
- */
-class GenClass0<T> {
-    void m1(T p) {
-        // p is treated as of type Object -> only methods defined in Object are available
-    }
-}
-
-/**
- * You can require a type parameter to be a subtype of one or more types (<i>constrained parametric polymorphism</i>)
- * <p>{@code GenClassA<T extends IA>} - the T represents all types extending/implementing {@code IA}
- */
-class GenClassA<T extends IA> {
-    void m1(T p) {
-        p.mA(); // OK, p is treated as of type A
-    }
-}
-
-/**
- * <p>{@code GenClassB<T extends IB>} - the T represents all types extending/implementing {@code IB}
- */
-class GenClassB<T extends IB> {
-    void m1(T p) {
-        p.mA(); // OK, p is treated as of type B
-        p.mB(); // OK, as above
-    }
-}
-
-/**
- * <p>{@code GenClassC<T extends IC>} - the T represents all types extending/implementing {@code IC}
- */
-class GenClassC<T extends IC> {
-    void m1(T p) {
-        p.mA(); // OK, p is treated as of type C
-        p.mB(); // OK, as above
-        p.mC(); // OK, as above
-    }
-}
-
-/**
- * A multiple-bound type parameter, T (being a subtype of two types, here interfaces)
- */
-class GenClassA10<T extends IA & I10> {
-    void m1(T p) {
-        p.mA(); // OK, p is treated as of type IA
-        p.m10(); // OK, p is treated as of type I10
-    }
-}
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     private static void demo0() {
@@ -196,5 +81,27 @@ public class Main {
         demoB();
         demoC();
         demoA10();
+
+        List<String> strrr = new ArrayList<>();
+        List<String> str = returnList(strrr);
+    }
+
+    /**
+     *
+     * Now the code compiles because the generic type must implement of the moveable interface
+     *
+     */
+    private static <T extends Moveable> void moveAll(T[] elems, int x, int y) {
+        for (var el : elems) {
+            el.goTo(x, y);
+        }
+    }
+
+    private static <T> List<T> returnList(List<T> list) {
+        return list;
+    }
+
+    interface Moveable {
+        void goTo(int x, int y);
     }
 }

@@ -1,2 +1,4 @@
-package agh.ii.prinjava.lab04.lst04_06;public class C {
+package agh.ii.prinjava.lab04.lst04_06;
+
+class C extends B {
 }
