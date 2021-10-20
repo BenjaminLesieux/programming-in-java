@@ -5,9 +5,12 @@ import agh.ii.prinjava.lab04.exc04_02.MyQueue;
 public class MyQueueDLLBImpl<E> implements MyQueue<E> {
     private DLinkList<E> elems;
 
+    public MyQueueDLLBImpl() {
+        this.elems = new DLinkList<>();
+    }
+
     @Override
     public void enqueue(E x) {
-        throw new IllegalStateException("To be implemented");
     }
 
     @Override

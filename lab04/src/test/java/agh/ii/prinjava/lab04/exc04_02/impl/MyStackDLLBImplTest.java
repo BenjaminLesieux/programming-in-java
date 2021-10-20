@@ -23,4 +23,16 @@ class MyStackDLLBImplTest {
     void newStackIsEmpty() {
         assertTrue(true);
     }
+
+    @Test
+    void pop() {
+    }
+
+    @Test
+    void push() {
+    }
+
+    @Test
+    void peek() {
+    }
 }

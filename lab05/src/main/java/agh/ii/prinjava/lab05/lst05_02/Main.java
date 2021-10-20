@@ -1,85 +1,7 @@
 package agh.ii.prinjava.lab05.lst05_02;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.function.Consumer;
-
-/**
- * For any object {@code obj} of a class that implements the {@link Iterable} interface,
- * the enhanced for loop is translated to the form:
- * <pre>
- * Iterator<...> iter = obj.iterator();
- * while (iter.hasNext()) {
- *   ... e = iter.next();
- * }
- * </pre>
- *
- * <p>Explicit use of iterators is not recommended in the modern Java. Use the enhanced for-loop instead, i.e.
- * <pre>
- * for (var e : obj) {
- *   // process element
- * }
- * </pre>
- *
- * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html">Iterator</a>
- * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html">Iterable</a>
- */
-class IterableArray<E> implements Iterable<E> {
-    private final Object[] elems;
-    private final int size;
-
-    public IterableArray(int size) {
-        this.size = size;
-        this.elems = new Object[size];
-    }
-
-    @SuppressWarnings("unchecked")
-    public E get(int index) {
-        if (index >= size || index < 0) throw new IndexOutOfBoundsException();
-        return (E) elems[index];
-    }
-    public void set(int index, E elem) {
-        if (index >= size || index < 0) throw new IndexOutOfBoundsException();
-        elems[index] = elem;
-    }
-
-    @Override
-    public String toString() {
-        return "IterableArray{" + "elems=" + Arrays.toString(elems) + ", size=" + size + '}';
-    }
-
-    @Override
-    public Iterator<E> iterator() {
-        return new ArrayIterator();
-    }
-
-    @Override
-    public void forEach(Consumer<? super E> action) {
-        Iterable.super.forEach(action);
-    }
-
-    /** Iterator as a nested non-static private class */
-    private class ArrayIterator implements Iterator<E> {
-        private int i = 0;
-
-        public ArrayIterator() {
-            System.out.println("New iterator is being created...");
-        }
-
-        @Override
-        public boolean hasNext() {
-            return i < size;
-        }
-
-        @SuppressWarnings("unchecked")
-        @Override
-        public E next() {
-            if (!hasNext()) throw new NoSuchElementException();
-            return (E) elems[i++];
-        }
-    }
-}
 
 public class Main {
 
@@ -120,5 +42,20 @@ public class Main {
 
     public static void main(String[] args) {
         demo1();
+
+        List<Integer> ints = List.of(1,2,3,4,5);
+
+        System.out.println("\nfor loop");
+        for (int i = 0; i < ints.size(); i++) System.out.println(ints.get(i));
+
+        System.out.println("for loop enhanced");
+        for (Integer anInt : ints) System.out.println(anInt);
+
+        System.out.println("iterator");
+        Iterator<Integer> it = ints.iterator();
+        while(it.hasNext()) System.out.println(it.next());
+
+        System.out.println("forEach function");
+        ints.forEach(System.out::println);
     }
 }

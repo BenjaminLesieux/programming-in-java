@@ -241,7 +241,14 @@ public class Main {
         weekDays.forEach(System.out::println);
     }
 
+    private static void m() {
+        String[] cities = {"Copenhagen", "Warsaw", "Budapest"};
+        Arrays.sort(cities, Comparator.comparingInt(String::length));
+        System.out.println(Arrays.toString(cities));
+    }
+
     public static void main(String[] args) {
+        m();
         demo1();
         demo2();
         demo3();
@@ -253,69 +260,3 @@ public class Main {
     }
 }
 
-/**
- * <p>{@link #equals}, {@link #hashCode} NOT overridden
- */
-final class C0 {
-    private final String s;
-
-    public C0(String s) {
-        this.s = s;
-    }
-
-    public String getS() {
-        return s;
-    }
-
-    @Override
-    public String toString() {
-        return "C0{" + "s='" + s + '\'' + '}';
-    }
-}
-
-/**
- * <ul>
- *     <li>{@link #equals} overridden, {@link #hashCode} NOT overridden</li>
- *     <li>{@link Comparable} implemented</li>
- * </ul>
- */
-final class C1 implements Comparable<C1> {
-    private final String s;
-
-    public C1(String s) {
-        this.s = s;
-    }
-
-    public String getS() {
-        return s;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        C1 c1 = (C1) o;
-        return Objects.equals(s, c1.s);
-    }
-
-    @Override
-    public String toString() {
-        return "C1{" + "s='" + s + '\'' + '}';
-    }
-
-    @Override
-    public int compareTo(C1 o) {
-        return s.compareTo(o.s);
-    }
-}
-
-/**
- * <ul>
- *     <li>{@link #equals}, {@link #hashCode} overridden</li>
- *     <li>{@link Comparable} NOT implemented</li>
- * </ul>
- */
-record C2(String s) {
-}
-
-enum Day { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }

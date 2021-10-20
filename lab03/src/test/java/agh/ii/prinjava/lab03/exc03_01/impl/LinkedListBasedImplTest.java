@@ -88,6 +88,8 @@ class LinkedListBasedImplTest {
             var dsObj = (LinkedListBasedImpl) in.readObject();
             System.out.println("Queue of ints (deserialized object): " + dsObj);
 
+            // if both return the same thing then the deserialization must have worked
+            assertEquals(sObj.toString(), dsObj.toString());
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("demo2: IOException | ClassNotFoundException");
             e.printStackTrace();

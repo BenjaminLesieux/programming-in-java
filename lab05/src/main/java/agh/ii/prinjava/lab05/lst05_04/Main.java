@@ -120,30 +120,3 @@ public class Main {
     }
 }
 
-record Box1<T extends Comparable<T>>(T e) implements Comparable<Box1<T>> {
-    @Override
-    public int compareTo(Box1<T> that) {
-        return e.compareTo(that.e);
-    }
-}
-
-/**
- * Note {@link Box2} does not implement {@link Comparable}
- * <p>The use of {@link Comparator} will be necessary in some scenarios (e.g. sorting)
- */
-record Box2<T>(T e) {
-    @Override
-    public int hashCode() {
-        return Objects.hash(e);
-    }
-}
-
-/**
- * Generic comparator for {@code Box2<T>}
- */
-class Box2Comparator<T extends Comparable<T>> implements Comparator<Box2<T>> {
-    @Override
-    public int compare(Box2<T> o1, Box2<T> o2) {
-        return o1.e().compareTo(o2.e());
-    }
-}

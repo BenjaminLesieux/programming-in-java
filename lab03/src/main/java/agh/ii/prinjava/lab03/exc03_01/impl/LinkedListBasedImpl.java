@@ -35,13 +35,17 @@ public class LinkedListBasedImpl implements QueueOfInts, Serializable {
     @Override
     public int dequeue() {
 
-        if (first == null) throw new IllegalStateException("There is no element in the queue to dequeue");
+        if (first == null || last == null) throw new IllegalStateException("There is no element in the queue to dequeue");
 
         Node node = first;
         first = first.next;
-        
+
         if (first == null) {
             last = null;
+        }
+
+        else {
+            first.prev = null;
         }
         
         return node.elem;
