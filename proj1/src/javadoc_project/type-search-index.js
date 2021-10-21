@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"agh.ii.prinjava.proj1.impl","l":"DLinkList"},{"p":"agh.ii.prinjava.proj1","l":"MyQueue"},{"p":"agh.ii.prinjava.proj1.impl","l":"MyQueueDLLBImpl"},{"p":"agh.ii.prinjava.proj1","l":"MyStack"},{"p":"agh.ii.prinjava.proj1.impl","l":"MyStackDLLBImpl"}];updateSearchResults();

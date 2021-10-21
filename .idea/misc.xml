@@ -5,7 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/AGH/Java/Class Four" />
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/AGH/Java/Class Four/lab04/javadoc_project" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="corretto-16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

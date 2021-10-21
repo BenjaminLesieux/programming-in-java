@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"agh.ii.prinjava.proj1"},{"l":"agh.ii.prinjava.proj1.impl"},{"l":"All Packages","u":"allpackages-index.html"}];updateSearchResults();
