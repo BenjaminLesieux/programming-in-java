@@ -3,11 +3,15 @@ package agh.ii.prinjava.proj1.impl;
 public class DLinkList<E> {
 
     /**
-     * This variable is the head of the list from which we'll be able to go through
-     * all the elements
+     * This variable represents the first {@link Node} of the DLL. It allows better performances
+     * when adding or removing elements at the start of the list.
      * */
     private Node<E> head;
 
+    /**
+     * This variable represents the last {@link Node} of the DLL. It allows better performances
+     * when adding or removing elements at the end of the list.
+     * */
     private Node<E> tail;
 
     public DLinkList() {}
