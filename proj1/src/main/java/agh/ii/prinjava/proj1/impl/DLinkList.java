@@ -156,6 +156,16 @@ public class DLinkList<E> {
         }
     }
 
+    /**
+     *
+     * This returns the text representation of a DoublyLinkedList.
+     * This text representation is a string that looks like the example below for
+     * a simple list containing 3 elements (1,2 and 3) <br><br>
+     *
+     * {@code 1<-->2<-->3->X} <br>
+     *
+     * @see Object#toString()
+     * */
     @Override
     public String toString() {
 

@@ -61,6 +61,9 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
         return this.elems.seek(elems.getSize()-1);
     }
 
+    /**
+     * @see DLinkList#toString()
+     * */
     @Override
     public String toString() {
         return this.elems.toString();

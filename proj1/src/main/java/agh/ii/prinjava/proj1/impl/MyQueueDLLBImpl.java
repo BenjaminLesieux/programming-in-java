@@ -70,6 +70,9 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
         return this.elems.seek(0);
     }
 
+    /**
+     * @see DLinkList#toString()
+     * */
     @Override
     public String toString() {
         return this.elems.toString();
