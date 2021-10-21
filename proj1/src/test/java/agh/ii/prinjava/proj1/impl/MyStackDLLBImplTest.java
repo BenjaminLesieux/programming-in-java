@@ -61,5 +61,13 @@ class MyStackDLLBImplTest {
 
     @Test
     void peek() {
+        Random random = new Random();
+
+        for (int i = 0; i < Math.abs(random.nextInt(100)); i++) {
+            int n = random.nextInt();
+            stackOfInts.push(n);
+            assertEquals(n, stackOfInts.peek());
+            stackOfInts.pop();
+        }
     }
 }
