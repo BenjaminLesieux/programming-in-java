@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DLinkListTest {
@@ -21,17 +23,28 @@ class DLinkListTest {
     void tearDown() {
     }
 
+
     @Test
-    void addFirstAndCheckRemovedValue() {
-        dLinkList.addFirst(17);
+    void addFirst() {
+        Random random = new Random();
 
-        System.out.println(dLinkList);
-        dLinkList.addFirst(44);
+        for (int i = 0; i < Math.abs(random.nextInt(100)); i++) {
+            int n = random.nextInt();
+            dLinkList.addFirst(n);
+            assertEquals(n, dLinkList.seek(0));
+        }
+    }
 
-        System.out.println(dLinkList);
+    @Test
+    void removeFirst() {
+        Random random = new Random();
 
-        assertEquals(44, dLinkList.removeFirst());
-        assertEquals(17, dLinkList.removeFirst());
+        for (int i = 0; i < Math.abs(random.nextInt(100)); i++) {
+            int n = random.nextInt();
+            dLinkList.addFirst(n);
+            assertEquals(n, dLinkList.removeFirst());
+        }
+
         assertEquals(3, dLinkList.removeFirst());
         assertEquals(23, dLinkList.removeFirst());
         assertEquals(234, dLinkList.removeFirst());
@@ -40,19 +53,31 @@ class DLinkListTest {
     }
 
     @Test
-    void addLastAndCheckRemovedValue() {
-        dLinkList.addLast(17);
-        System.out.println(dLinkList);
-        dLinkList.addLast(44);
-        System.out.println(dLinkList);
+    void addLast() {
+        Random random = new Random();
 
-        assertEquals(44, dLinkList.removeLast());
-        assertEquals(17, dLinkList.removeLast());
+        for (int i = 0; i < Math.abs(random.nextInt(100)); i++) {
+            int n = random.nextInt();
+            dLinkList.addLast(n);
+            assertEquals(n, dLinkList.seek(dLinkList.getSize()-1));
+        }
+    }
+
+    @Test
+    void removeLast() {
+        Random random = new Random();
+
+        for (int i = 0; i < Math.abs(random.nextInt(100)); i++) {
+            int n = random.nextInt();
+            dLinkList.addLast(n);
+            assertEquals(n, dLinkList.removeLast());
+        }
+
         assertEquals(23344, dLinkList.removeLast());
         assertEquals(234, dLinkList.removeLast());
         assertEquals(23, dLinkList.removeLast());
         assertEquals(3, dLinkList.removeLast());
-       //assertThrows(IllegalStateException.class, dLinkList::removeLast);
+        assertThrows(IllegalStateException.class, dLinkList::removeLast);
     }
 
     @Test
