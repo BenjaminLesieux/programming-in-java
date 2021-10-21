@@ -34,6 +34,7 @@ public interface MyQueue<E> {
     E dequeue();
 
     /**
+     * Checks if the Queue is empty or not
      * @return true if the list is empty, false otherwise
      * */
     default boolean isEmpty() {
@@ -41,6 +42,7 @@ public interface MyQueue<E> {
     }
 
     /**
+     * Count the number of elements in the Queue
      * @return The number of elements in the Queue
      * @see MyQueueDLLBImpl#numOfElems()
      * */

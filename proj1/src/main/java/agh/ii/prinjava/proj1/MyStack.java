@@ -34,6 +34,7 @@ public interface MyStack<E> {
     void push(E x);
 
     /**
+     * Checks if the Stack is empty or not
      * @return true if the list is empty, false otherwise
      * */
     default boolean isEmpty() {
@@ -41,6 +42,7 @@ public interface MyStack<E> {
     }
 
     /**
+     * Counts the number of elements in the Stack
      * @return the number of elements in the Stack
      * @see MyStackDLLBImpl#numOfElems()
      * */
