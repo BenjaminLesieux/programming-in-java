@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="agh.ii.prinjava.proj1.impl.MyStackDLLBImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-21T21:34:20" hostname="MacBook-Pro-de-Benjamin.local" time="0.043">
+  <properties/>
+  <testcase name="numOfElems()" classname="agh.ii.prinjava.proj1.impl.MyStackDLLBImplTest" time="0.033"/>
+  <testcase name="pop()" classname="agh.ii.prinjava.proj1.impl.MyStackDLLBImplTest" time="0.004"/>
+  <testcase name="peek()" classname="agh.ii.prinjava.proj1.impl.MyStackDLLBImplTest" time="0.001"/>
+  <testcase name="push()" classname="agh.ii.prinjava.proj1.impl.MyStackDLLBImplTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
