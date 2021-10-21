@@ -19,9 +19,6 @@ public class LinkedListBasedImpl implements QueueOfInts, Serializable {
         if (first == null || last == null) {
             first = new Node(x, null, null);
 
-            first.next = null;
-            first.prev = null;
-
             last = first;
 
         }

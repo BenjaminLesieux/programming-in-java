@@ -24,7 +24,11 @@ class DLinkListTest {
     @Test
     void addFirstAndCheckRemovedValue() {
         dLinkList.addFirst(17);
+
+        System.out.println(dLinkList);
         dLinkList.addFirst(44);
+
+        System.out.println(dLinkList);
 
         assertEquals(44, dLinkList.removeFirst());
         assertEquals(17, dLinkList.removeFirst());
@@ -32,13 +36,15 @@ class DLinkListTest {
         assertEquals(23, dLinkList.removeFirst());
         assertEquals(234, dLinkList.removeFirst());
         assertEquals(23344, dLinkList.removeFirst());
-        //assertThrows(IllegalStateException.class, dLinkList::removeFirst);
+        assertThrows(IllegalStateException.class, dLinkList::removeFirst);
     }
 
     @Test
     void addLastAndCheckRemovedValue() {
         dLinkList.addLast(17);
+        System.out.println(dLinkList);
         dLinkList.addLast(44);
+        System.out.println(dLinkList);
 
         assertEquals(44, dLinkList.removeLast());
         assertEquals(17, dLinkList.removeLast());

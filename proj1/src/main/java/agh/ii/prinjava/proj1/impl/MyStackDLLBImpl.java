@@ -60,4 +60,9 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
     public E peek() {
         return this.elems.seek(elems.getSize()-1);
     }
+
+    @Override
+    public String toString() {
+        return this.elems.toString();
+    }
 }

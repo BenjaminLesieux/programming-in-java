@@ -69,4 +69,9 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
     public E peek() {
         return this.elems.seek(0);
     }
+
+    @Override
+    public String toString() {
+        return this.elems.toString();
+    }
 }

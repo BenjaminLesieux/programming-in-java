@@ -1,20 +1,5 @@
 package agh.ii.prinjava.proj1.impl;
 
-/**
- * A LinkedList is a data structure consisting of a series of {@link Node} linked together in such a way:
- * a -> b -> c -> ... where a, b, c are Nodes containing any piece of data.
- *
- * A DLinkedList (or DoublyLinkedList) does pretty much the same, but the Nodes are connected in both ways:
- * a <-> b <-> c <-> ...
- * <br><br>
- * This implementation of a DoublyLinkedList contains the following methods: <br>
- * {@link #addFirst(Object)}
- * {@link #addLast(Object)}
- * {@link #removeFirst()}
- * {@link #removeLast()}
- * {@link #seek(int)}
- * {@link #getSize()}
- * */
 public class DLinkList<E> {
 
     /**
@@ -22,6 +7,8 @@ public class DLinkList<E> {
      * all the elements
      * */
     private Node<E> head;
+
+    private Node<E> tail;
 
     public DLinkList() {}
 
@@ -32,8 +19,9 @@ public class DLinkList<E> {
      * @param element The new head
      * */
     public void addFirst(E element) {
-        if (head == null) {
+        if (head == null || tail == null) {
             head = new Node<>(element);
+            tail = head;
         }
 
         else {
@@ -51,13 +39,16 @@ public class DLinkList<E> {
      * @return the value of the first Node
      * */
     public E removeFirst() {
-        if (head == null)
+        if (head == null || tail == null)
             throw new IllegalStateException("You cannot remove the first element when the list is empty");
 
         Node<E> temp = head;
         head = head.next;
 
-        if (head != null)  head.prev = null;
+        if (head != null)
+            head.prev = null;
+        else
+            tail = null;
 
         return temp.elem;
     }
@@ -70,16 +61,16 @@ public class DLinkList<E> {
      * @param element The element to be added at the end of the list
      * */
     public void addLast(E element) {
-        if (head == null) {
+        if (head == null || tail == null) {
             head = new Node<>(element);
+            tail = head;
         }
 
         else {
-            Node<E> temp = head;
-
-            while (temp.next != null) temp = temp.next;
-
-            temp.next = new Node<>(element);
+            tail.next = new Node<>(element);
+            Node<E> prev = tail;
+            tail = tail.next;
+            tail.prev = prev;
         }
     }
 
@@ -91,27 +82,22 @@ public class DLinkList<E> {
      * @return the value of the last Node
      * */
     public E removeLast() {
-        if (head == null)
+        if (head == null || tail == null)
             throw new IllegalStateException("Cannot remove the last element when the list is empty");
 
-        Node<E> temp = head;
-        Node<E> prev = head;
+        E value = tail.elem;
+        tail = tail.prev;
 
-        while (temp.next != null) {
-            prev = temp;
-            temp = temp.next;
-        }
-
-        E value = temp.elem;
-        prev.next = null;
-
-        show();
+        if (tail != null)
+            tail.next = null;
+        else
+            head = null;
 
         return value;
     }
 
     /**
-     * This function seeks the value of the element at the specified {@code index} of the LinkedList
+     * This function seeks the value of the element at the {@code index} index of the LinkedList
      * and returns its value
      *
      * @param index The targeted index
@@ -127,8 +113,6 @@ public class DLinkList<E> {
         for (int i = 0; i < index; i++) {
             target = target.next;
         }
-
-        show();
 
         return target.elem;
     }
@@ -146,10 +130,6 @@ public class DLinkList<E> {
         }
 
         return size;
-    }
-
-    private void show() {
-        System.out.println(this);
     }
 
     /**
@@ -194,3 +174,4 @@ public class DLinkList<E> {
         return result.toString();
     }
 }
+

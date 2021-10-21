@@ -21,6 +21,7 @@ public interface MyQueue<E> {
      * First in - First out principle.
      *
      * @param x The element to add at the end
+     * @see MyQueueDLLBImpl#enqueue(Object)
      * */
     void enqueue(E x);
 
@@ -28,6 +29,7 @@ public interface MyQueue<E> {
      * Dequeuing an element means removing the first element of the queue and returning its value.
      *
      * @return The first element of the Queue
+     * @see MyQueueDLLBImpl#dequeue()
      * */
     E dequeue();
 
@@ -40,6 +42,7 @@ public interface MyQueue<E> {
 
     /**
      * @return The number of elements in the Queue
+     * @see MyQueueDLLBImpl#numOfElems()
      * */
     int numOfElems();
 
@@ -47,6 +50,7 @@ public interface MyQueue<E> {
      * Retrieves the value of the first element of the Queue but does not remove it.
      *
      * @return The value of the first element of the Queue
+     * @see MyQueueDLLBImpl#peek()
      * */
     E peek();
 
